@@ -5,9 +5,13 @@ This project use [vegeta](https://github.com/tsenart/vegeta) for stress testing.
 
 Steps to reproduce:
 
-1 - vegeta attack -targets=tests/vegeta -rate=50 -duration=30s | vegeta report
+1 - Build the project with `make build`
 
-2 - Wait for a timeout to show. If not, run it again in sequence.
+2 - Run it with `make run`
+
+3 - Run the command: `vegeta attack -targets=tests/vegeta -rate=50 -duration=30s | vegeta report`
+
+4 - Wait for a timeout to show. If not, run it again in sequence.
 
 
 
