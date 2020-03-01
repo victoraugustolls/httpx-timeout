@@ -2,7 +2,7 @@ from fastapi import HTTPException
 from httpx import AsyncClient
 
 
-class Dependency:
+class HTTPXDependency:
     __slots__ = "_client"
 
     def __init__(self, *, client: AsyncClient):

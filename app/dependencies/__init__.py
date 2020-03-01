@@ -1,3 +1,4 @@
-from .auth import Dependency
+from .aiohttp import AiohttpDependency
+from .httpx import HTTPXDependency
 
-__all__ = ["Dependency"]
+__all__ = ["AiohttpDependency", "HTTPXDependency"]

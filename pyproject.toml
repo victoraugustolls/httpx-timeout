@@ -11,6 +11,9 @@ httpx = "^0.11.1"
 fastapi = "^0.49.0"
 gunicorn = "^20.0.4"
 uvicorn = "^0.11.3"
+aiohttp = "^3.6.2"
+cchardet = "^2.1.5"
+aiodns = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 

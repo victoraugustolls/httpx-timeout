@@ -9,7 +9,7 @@ Steps to reproduce:
 
 2 - Run it with `make run`
 
-3 - Run the command: `vegeta attack -targets=tests/vegeta -rate=50 -duration=30s | vegeta report`
+3 - Run the command: `vegeta attack -targets=tests/vegeta -rate=100 -duration=30s | vegeta report`
 
 4 - Wait for a timeout to show. If not, run it again in sequence.
 

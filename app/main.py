@@ -1,14 +1,22 @@
+import aiohttp
 import httpx
 from fastapi import Depends, FastAPI
 
-from app.dependencies import Dependency
+from app.dependencies import AiohttpDependency, HTTPXDependency
 
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
 client = httpx.AsyncClient()
-dep = Dependency(client=client)
+session = aiohttp.ClientSession()
+dep_aiohttp = AiohttpDependency(client=session)
+dep_httpx = HTTPXDependency(client=client)
 
 
-@app.get("/test", dependencies=[Depends(dep)])
-async def test():
+@app.get("/aiohttp", dependencies=[Depends(dep_aiohttp)])
+async def test_aiohttp():
+    return True
+
+
+@app.get("/httpx", dependencies=[Depends(dep_httpx)])
+async def test_httpx():
     return True
