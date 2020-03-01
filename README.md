@@ -1,1 +1,14 @@
 # httpx-timeout
+
+Sample project to find reason behind httpx timeouts
+This project use [vegeta](https://github.com/tsenart/vegeta) for stress testing.
+
+Steps to reproduce:
+
+1 - vegeta attack -targets=tests/vegeta -rate=50 -duration=30s | vegeta report
+
+2 - Wait for a timeout to show. If not, run it again in sequence.
+
+
+
+#### It does not happen always, it appears to be random. Stress testing just make it more common.
