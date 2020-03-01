@@ -6,8 +6,12 @@ from app.dependencies import AiohttpDependency, HTTPXDependency
 
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
-client = httpx.AsyncClient()
-session = aiohttp.ClientSession()
+client = httpx.AsyncClient(
+    pool_limits=httpx.PoolLimits(soft_limit=10, hard_limit=50000)
+)
+session = aiohttp.ClientSession(
+    timeout=aiohttp.ClientTimeout(5.0)
+)
 dep_aiohttp = AiohttpDependency(client=session)
 dep_httpx = HTTPXDependency(client=client)
 
